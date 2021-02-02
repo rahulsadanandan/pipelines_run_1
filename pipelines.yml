@@ -14,7 +14,7 @@ pipelines:
               key2: v4
         execution:
           onExecute:
-            - sleep 1h
+            - sleep 45m
             - echo "Executing matrix step on ${steplet_id}"
               
               
