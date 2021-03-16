@@ -10,7 +10,7 @@ resources:
       files:
         include: \bmicro\/.+\b
         
-  - name: tgit_{{gitBranch}}
+  - name: tgit
     type: GitRepo
     configuration:
       path: Khazinawaz/pipelines_run_1
