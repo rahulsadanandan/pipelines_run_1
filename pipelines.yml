@@ -28,8 +28,6 @@ pipelines:
           inputResources:
             - name: templateGit
           affinityGroup: group1
-          outputResources:
-            - name: m1
         execution: 
           onExecute:
             - echo "Step 1"
@@ -41,7 +39,6 @@ pipelines:
         configuration:
           affinityGroup: group1
           inputResources:
-            - name: m1
             - name: microGit
         execution: 
           onExecute:
@@ -51,8 +48,6 @@ pipelines:
         type: Bash
         configuration:
           affinityGroup: group1
-          outputResources:
-            - name: m2
           inputSteps:
             - name: micro_build
         execution: 
@@ -65,7 +60,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: m2
+            - name: microGit
         execution: 
           onExecute:
             - echo "Step 4"
