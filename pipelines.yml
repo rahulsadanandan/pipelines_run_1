@@ -3,8 +3,6 @@ resources:
     type: GitRepo
     configuration:
       path: Khazinawaz/pipelines_run_1
-      branches:
-        include: ^{{abcdefghgitBranchijklmnop}}$
       gitProvider: nawaz_gh
       files:
         include: \bmicro\/.+\b
@@ -13,8 +11,6 @@ resources:
     type: GitRepo
     configuration:
       path: Khazinawaz/pipelines_run_1
-      branches:
-        include: ^{{gitBranch}}$
       gitProvider: nawaz_gh
       files:
         include: \btemplate\/.+\b
