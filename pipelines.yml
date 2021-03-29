@@ -56,7 +56,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: microGit1
+            - name: template_build
         execution: 
           onExecute:
             - echo "Step 4"
