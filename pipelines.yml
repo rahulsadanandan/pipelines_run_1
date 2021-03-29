@@ -36,6 +36,8 @@ pipelines:
           affinityGroup: group1
           inputResources:
             - name: microGit1
+          inputSteps:
+            - name: start
         execution: 
           onExecute:
             - echo "Step 2"
@@ -45,7 +47,7 @@ pipelines:
         configuration:
           affinityGroup: group1
           inputSteps:
-            - name: micro_build
+            - name: start
         execution: 
           onExecute:
             - echo "Step 1"
@@ -61,6 +63,11 @@ pipelines:
           onExecute:
             - echo "Step 4"
 
+      - name: start
+        type: Bash
+        execution: 
+          onExecute:
+            - echo "Start"
   # - name: ResTrig
   #   steps:
   #     - name: trigger
