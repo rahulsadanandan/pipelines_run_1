@@ -1,5 +1,5 @@
 resources:
-  - name: microGit
+  - name: microGit1
     type: GitRepo
     configuration:
       path: Khazinawaz/pipelines_run_1
@@ -7,7 +7,7 @@ resources:
       files:
         include: \bmicro\/.+\b
         
-  - name: templateGit
+  - name: templateGit1
     type: GitRepo
     configuration:
       path: Khazinawaz/pipelines_run_1
@@ -22,7 +22,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: templateGit
+            - name: templateGit1
           affinityGroup: group1
         execution: 
           onExecute:
@@ -35,7 +35,7 @@ pipelines:
         configuration:
           affinityGroup: group1
           inputResources:
-            - name: microGit
+            - name: microGit1
         execution: 
           onExecute:
             - echo "Step 2"
@@ -56,7 +56,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: microGit
+            - name: microGit1
         execution: 
           onExecute:
             - echo "Step 4"
