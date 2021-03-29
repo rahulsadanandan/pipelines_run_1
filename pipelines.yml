@@ -55,7 +55,7 @@ pipelines:
       - name: step4
         type: Bash
         configuration:
-          inputResources:
+          inputSteps:
             - name: template_build
         execution: 
           onExecute:
