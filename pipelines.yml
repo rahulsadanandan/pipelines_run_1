@@ -12,7 +12,7 @@ pipelines:
     configuration:
       outputResources:
         - name: resource_r
-     execution:
+    execution:
       onExecute:
        - echo "A"
   - name: step_B
