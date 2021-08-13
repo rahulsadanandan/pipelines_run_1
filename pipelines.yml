@@ -11,20 +11,32 @@ pipelines:
     type: Bash
     configuration:
       outputResources:
-        - resource_r
+        - name: resource_r
+     execution:
+      onExecute:
+       - echo "A"
   - name: step_B
     type: Bash
     configuration:
       inputSteps:
-        - name: step_A 
+        - name: step_A
+    execution:
+      onExecute:
+       - echo "B"
   - name: step_C
     type: Bash
     configuration:
       inputResources:
       - name: resource_r
         newVersionOnly: true
+    execution:
+      onExecute:
+       - echo "C"
   - name: step_D
     type: Bash
+    execution:
+      onExecute:
+       - echo "D"
     configuration:
       inputSteps:
       - name: step_B
