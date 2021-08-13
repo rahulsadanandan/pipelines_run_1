@@ -8,19 +8,23 @@ pipelines:
 - name: my_pipeline
   steps:
   - name: step_A
+    type: Bash
     configuration:
       outputResources:
         - resource_r
   - name: step_B
+    type: Bash
     configuration:
       inputSteps:
         - name: step_A 
   - name: step_C
+    type: Bash
     configuration:
       inputResources:
       - name: resource_r
         newVersionOnly: true
   - name: step_D
+    type: Bash
     configuration:
       inputSteps:
       - name: step_B
