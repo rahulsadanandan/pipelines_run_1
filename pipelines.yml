@@ -5,7 +5,7 @@ resources:
       key1: value1
 
 pipelines:
-- name: my_pipeline_2
+- name: my_pipeline_3
   steps:
   - name: step_A
     type: Bash
