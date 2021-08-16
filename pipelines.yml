@@ -1,5 +1,5 @@
 resources:
-  - name: resource_r2
+  - name: resource_r3
     type: PropertyBag
     configuration:
       key1: value1
@@ -11,7 +11,7 @@ pipelines:
     type: Bash
     configuration:
       outputResources:
-        - name: resource_r2
+        - name: resource_r3
     execution:
       onExecute:
        - echo "A"
@@ -27,7 +27,7 @@ pipelines:
     type: Bash
     configuration:
       inputResources:
-      - name: resource_r2
+      - name: resource_r3
         newVersionOnly: true
     execution:
       onExecute:
@@ -39,12 +39,10 @@ pipelines:
        - echo "D"
     configuration:
       inputSteps:
-      - name: step_B
       - name: step_C
         status:
         - success
-        - skipped
-        
+        - skipped        
   - name: step_E
     type: Bash
     execution:
@@ -52,4 +50,29 @@ pipelines:
        - echo "D"
     configuration:
       inputSteps:
-      - name: step_C
+      - name: step_D
+        status:
+        - success
+        - skipped
+  - name: step_F
+    type: Bash
+    execution:
+      onExecute:
+       - echo "D"
+    configuration:
+      inputSteps:
+      - name: step_E
+        status:
+        - success
+        - skipped
+  - name: step_G
+    type: Bash
+    execution:
+      onExecute:
+       - echo "D"
+    configuration:
+      inputSteps:
+      - name: step_F
+        status:
+        - success
+
