@@ -1,5 +1,5 @@
 resources:
-  - name: resource_r3
+  - name: resource_r4
     type: PropertyBag
     configuration:
       key1: value1
@@ -11,7 +11,7 @@ pipelines:
     type: Bash
     configuration:
       outputResources:
-        - name: resource_r3
+        - name: resource_r4
     execution:
       onExecute:
        - echo "A"
@@ -27,7 +27,7 @@ pipelines:
     type: Bash
     configuration:
       inputResources:
-      - name: resource_r3
+      - name: resource_r4
         newVersionOnly: true
     execution:
       onExecute:
