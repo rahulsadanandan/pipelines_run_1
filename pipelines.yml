@@ -5,7 +5,7 @@ resources:
       key1: value1
 
 pipelines:
-- name: my_pipeline_3
+- name: my_pipeline_4
   steps:
   - name: step_A
     type: Bash
@@ -32,6 +32,16 @@ pipelines:
     execution:
       onExecute:
        - echo "C"
+       
+  - name: step_C1
+    type: Bash
+    configuration:
+      inputSteps:
+      - name: step_C
+    execution:
+      onExecute:
+       - echo "C1"
+       
   - name: step_D
     type: Bash
     execution:
@@ -39,10 +49,21 @@ pipelines:
        - echo "D"
     configuration:
       inputSteps:
+      - name: step_C1
       - name: step_C
         status:
         - success
-        - skipped        
+        - skipped
+        
+  - name: step_D1
+    type: Bash
+    configuration:
+      inputSteps:
+      - name: step_D
+    execution:
+      onExecute:
+       - echo "D1"
+        
   - name: step_E
     type: Bash
     execution:
@@ -50,10 +71,12 @@ pipelines:
        - echo "D"
     configuration:
       inputSteps:
+      - name: step_D1
       - name: step_D
         status:
         - success
         - skipped
+        
   - name: step_F
     type: Bash
     execution:
