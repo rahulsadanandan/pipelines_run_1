@@ -13,6 +13,7 @@ pipelines:
         execution:
           onExecute:
             - echo "Executing matrix step on ${steplet_id}"
+            - bar
           onComplete:
             - foo
               
