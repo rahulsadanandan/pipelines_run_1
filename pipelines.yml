@@ -4,8 +4,6 @@ pipelines:
       - name: matrix_demo_timeout
         type: Matrix
         stepMode: Bash
-        configuration:
-          timeoutSeconds: 7200
         stepletMultipliers:
           environmentVariables:
             - key1: value1
