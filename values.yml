@@ -3,7 +3,7 @@ Pipeline:
 
 GitRepo:
   name: fooGitRepo
-  gitProvider: github
+  gitProvider: nawaz_gh
   path: jfrog/jfrog-pipelines-simple-example
   branches:
     exclude: 'master'
